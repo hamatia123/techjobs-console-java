@@ -54,6 +54,7 @@ public class TechJobs {
 
             } else { // choice is "search"
 
+
                 // How does the user want to search (e.g. by skill or employer)
                 String searchField = getUserSelection("Search by:", columnChoices);
 
@@ -62,7 +63,8 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
-                  //  System.out.println("Search all fields not yet implemented.");
+                    // System.out.println("Search all fields not yet implemented.");
+                    printJobs(JobData.findByValue(searchTerm));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
